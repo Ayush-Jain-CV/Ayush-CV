@@ -28,11 +28,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 10px;
+            padding: 16px 8px;
             min-height: 100vh;
         }
 
-        /* Top Header Bar for Live Date & Time */
+        /* Top Header Bar */
         .top-bar {
             width: 100%;
             max-width: 900px;
@@ -44,10 +44,10 @@
             color: var(--text-muted);
             letter-spacing: 0.5px;
             margin-bottom: 12px;
-            padding: 0 4px;
+            padding: 0 6px;
         }
 
-        /* Responsive Container */
+        /* Container Layout */
         .container {
             width: 100%;
             max-width: 900px;
@@ -55,7 +55,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Mobile first: main content on top */
             overflow: hidden;
         }
 
@@ -64,15 +64,16 @@
                 padding: 40px 20px;
             }
             .container {
-                flex-direction: row;
+                flex-direction: row; /* Desktop: side-by-side */
             }
         }
 
         /* Sidebar Styling */
         .sidebar {
             background-color: var(--sidebar-bg);
-            padding: 30px 24px;
+            padding: 24px 20px;
             width: 100%;
+            order: 2; /* Shows below main content on mobile */
         }
 
         @media (min-width: 768px) {
@@ -80,6 +81,8 @@
                 width: 320px;
                 flex-shrink: 0;
                 border-right: 1px solid #e2e8f0;
+                order: 1; /* Shows on left on desktop */
+                padding: 30px 24px;
             }
         }
 
@@ -99,13 +102,35 @@
 
         .sidebar-list {
             list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        @media (min-width: 768px) {
+            .sidebar-list {
+                display: block;
+            }
         }
 
         .sidebar-list li {
-            font-size: 0.88rem;
-            font-weight: 500;
+            font-size: 0.82rem;
+            font-weight: 600;
             color: var(--text-secondary);
-            margin-bottom: 8px;
+            background: #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        @media (min-width: 768px) {
+            .sidebar-list li {
+                background: transparent;
+                padding: 0;
+                border-radius: 0;
+                font-size: 0.88rem;
+                font-weight: 500;
+                margin-bottom: 8px;
+            }
         }
 
         .edu-item {
@@ -125,21 +150,23 @@
 
         /* Main Content Styling */
         .main-content {
-            padding: 30px 24px;
+            padding: 24px 20px;
             flex-grow: 1;
+            order: 1; /* Shows on top on mobile */
         }
 
         @media (min-width: 768px) {
             .main-content {
                 padding: 36px 36px;
+                order: 2; /* Shows on right on desktop */
             }
         }
 
         .header-top {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            margin-bottom: 24px;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
         @media (min-width: 600px) {
@@ -151,10 +178,10 @@
         }
 
         .name {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 900;
             letter-spacing: -0.5px;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
             line-height: 1.1;
         }
 
@@ -164,7 +191,7 @@
             letter-spacing: 1.2px;
             color: var(--text-muted);
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .contact-info {
@@ -198,11 +225,13 @@
 
         .languages-box {
             text-align: left;
+            margin-top: 4px;
         }
 
         @media (min-width: 600px) {
             .languages-box {
                 text-align: right;
+                margin-top: 0;
             }
         }
 
@@ -213,7 +242,7 @@
         }
 
         .main-section {
-            margin-bottom: 24px;
+            margin-bottom: 22px;
         }
 
         .main-title {
@@ -228,7 +257,7 @@
 
         .summary {
             font-size: 0.88rem;
-            line-height: 1.5;
+            line-height: 1.55;
             color: var(--text-secondary);
         }
 
@@ -272,49 +301,7 @@
 </div>
 
 <div class="container">
-    <!-- LEFT SIDEBAR -->
-    <aside class="sidebar">
-        <div class="sidebar-section">
-            <h2 class="sidebar-title">Hard Skills</h2>
-            <ul class="sidebar-list">
-                <li>Inventory Control</li>
-                <li>Multi-Location Tracking</li>
-                <li>Logistics & Procurement</li>
-                <li>Dispatch Planning</li>
-                <li>Advanced MS Excel</li>
-                <li>MIS Data Reporting</li>
-                <li>HBC System</li>
-                <li>Stock Documentation</li>
-                <li>CRM & Client Relations</li>
-            </ul>
-        </div>
-
-        <div class="sidebar-section">
-            <h2 class="sidebar-title">Soft Skills</h2>
-            <ul class="sidebar-list">
-                <li>Vendor Coordination</li>
-                <li>Process Optimization</li>
-                <li>Cross-Functional Teamwork</li>
-                <li>Service Scheduling</li>
-                <li>Customer Problem Solving</li>
-                <li>Warranty Processing</li>
-            </ul>
-        </div>
-
-        <div class="sidebar-section">
-            <h2 class="sidebar-title">Education</h2>
-            <div class="edu-item">
-                <p class="edu-degree">Bachelor of Arts (Prog.)</p>
-                <p class="edu-sub">University of Delhi</p>
-            </div>
-            <div class="edu-item">
-                <p class="edu-degree">Intermediate (CBSE)</p>
-                <p class="edu-sub">Senior Secondary (2022)</p>
-            </div>
-        </div>
-    </aside>
-
-    <!-- RIGHT MAIN CONTENT -->
+    <!-- RIGHT MAIN CONTENT (First on Mobile) -->
     <main class="main-content">
         <header class="header-top">
             <div>
@@ -379,6 +366,48 @@
             </ul>
         </section>
     </main>
+
+    <!-- LEFT SIDEBAR (Second on Mobile) -->
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <h2 class="sidebar-title">Hard Skills</h2>
+            <ul class="sidebar-list">
+                <li>Inventory Control</li>
+                <li>Multi-Location Tracking</li>
+                <li>Logistics & Procurement</li>
+                <li>Dispatch Planning</li>
+                <li>Advanced MS Excel</li>
+                <li>MIS Data Reporting</li>
+                <li>HBC System</li>
+                <li>Stock Documentation</li>
+                <li>CRM & Client Relations</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2 class="sidebar-title">Soft Skills</h2>
+            <ul class="sidebar-list">
+                <li>Vendor Coordination</li>
+                <li>Process Optimization</li>
+                <li>Cross-Functional Teamwork</li>
+                <li>Service Scheduling</li>
+                <li>Customer Problem Solving</li>
+                <li>Warranty Processing</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2 class="sidebar-title">Education</h2>
+            <div class="edu-item">
+                <p class="edu-degree">Bachelor of Arts (Prog.)</p>
+                <p class="edu-sub">University of Delhi</p>
+            </div>
+            <div class="edu-item">
+                <p class="edu-degree">Intermediate (CBSE)</p>
+                <p class="edu-sub">Senior Secondary (2022)</p>
+            </div>
+        </div>
+    </aside>
 </div>
 
 <!-- JAVASCRIPT FOR LIVE IST TIME & DATE -->
@@ -386,7 +415,6 @@
     function updateISTClock() {
         const now = new Date();
         
-        // Options for formatting time & date in Indian Standard Time (IST)
         const timeOptions = {
             timeZone: 'Asia/Kolkata',
             hour12: false,
@@ -408,7 +436,6 @@
         document.getElementById('live-time').innerText = `${dateString} | ${timeString} IST`;
     }
 
-    // Run clock immediately and refresh every 1 second
     updateISTClock();
     setInterval(updateISTClock, 1000);
 </script>
