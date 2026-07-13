@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Jain — Operations Executive</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #0f172a;
+            --accent-glow: #e0f2fe;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            overflow: hidden;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            background: linear-gradient(180deg, var(--accent-glow) 0%, var(--card-bg) 100%);
+            padding: 40px 30px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .sidebar-section {
+            margin-bottom: 32px;
+        }
+
+        .sidebar-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+        }
+
+        .sidebar-list {
+            list-style: none;
+        }
+
+        .sidebar-list li {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .edu-item {
+            margin-bottom: 12px;
+        }
+
+        .edu-degree {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .edu-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            padding: 40px 40px;
+            position: relative;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+
+        .name {
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .contact-info {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--text-primary);
+        }
+
+        .languages-box {
+            text-align: right;
+        }
+
+        .languages-box .sidebar-title {
+            text-align: right;
+            margin-bottom: 8px;
+        }
+
+        .languages-list {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .main-section {
+            margin-bottom: 28px;
+        }
+
+        .main-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+
+        .summary {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-role {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .exp-date {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .bullet-list {
+            padding-left: 18px;
+        }
+
+        .bullet-list li {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        /* Responsive Layout for Mobile */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .header-top {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .languages-box {
+                text-align: left;
+            }
+
+            .languages-box .sidebar-title {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <h2 class="sidebar-title">Hard Skills</h2>
+            <ul class="sidebar-list">
+                <li>Inventory Control</li>
+                <li>Multi-Location Tracking</li>
+                <li>Logistics & Procurement</li>
+                <li>Dispatch Planning</li>
+                <li>Advanced MS Excel</li>
+                <li>MIS Data Reporting</li>
+                <li>HBC System</li>
+                <li>Stock Documentation</li>
+                <li>CRM & Client Relations</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2 class="sidebar-title">Soft Skills</h2>
+            <ul class="sidebar-list">
+                <li>Vendor Coordination</li>
+                <li>Process Optimization</li>
+                <li>Cross-Functional Teamwork</li>
+                <li>Service Scheduling</li>
+                <li>Customer Problem Solving</li>
+                <li>Warranty Processing</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h2 class="sidebar-title">Education</h2>
+            <div class="edu-item">
+                <p class="edu-degree">Bachelor of Arts (Prog.)</p>
+                <p class="edu-sub">University of Delhi</p>
+            </div>
+            <div class="edu-item">
+                <p class="edu-degree">Intermediate (CBSE)</p>
+                <p class="edu-sub">Senior Secondary (2022)</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT -->
+    <main class="main-content">
+        <header class="header-top">
+            <div>
+                <h1 class="name">Ayush Jain</h1>
+                <p class="title">Operations Executive</p>
+                <div class="contact-info">
+                    <a href="mailto:ayushjainn711@gmail.com">ayushjainn711@gmail.com</a>
+                    <span>•</span>
+                    <a href="tel:+917011678840">+91 7011678840</a>
+                    <span>•</span>
+                    <span>New Delhi, India</span>
+                </div>
+            </div>
+
+            <div class="languages-box">
+                <h2 class="sidebar-title">Languages</h2>
+                <div class="languages-list">
+                    English (Proficient)<br>
+                    Hindi (Native)
+                </div>
+            </div>
+        </header>
+
+        <section class="main-section">
+            <h2 class="main-title">About Me</h2>
+            <p class="summary">
+                Results-driven Operations Executive with over 2 years of hands-on experience in the automotive accessories sector. Proficient in multi-location inventory control, logistics coordination, and supply chain management. Expert in vendor coordination, quotation preparation, after-sales service, and process optimization.
+            </p>
+        </section>
+
+        <section class="main-section">
+            <h2 class="main-title">Experience</h2>
+            
+            <article class="exp-item">
+                <h3 class="exp-role">Operations Executive — Rego Innovations Pvt. Ltd.</h3>
+                <p class="exp-date">APR 2025 – APR 2026</p>
+                <ul class="bullet-list">
+                    <li>Manage high-value Avery Dennison films and wrap stock across Gurgaon, Mumbai, and Bangalore offices.</li>
+                    <li>Utilize the HBC System for procurement and consumable stock tracking to ensure inventory accuracy.</li>
+                    <li>Coordinate with vendors, installers, and logistics partners to streamline warehouse and dispatch operations.</li>
+                    <li>Process product warranty claims with accurate documentation and timely coordination.</li>
+                </ul>
+            </article>
+
+            <article class="exp-item">
+                <h3 class="exp-role">Sales & Service Coordinator — Rai Automotive Systems</h3>
+                <p class="exp-date">FEB 2024 – APR 2025</p>
+                <ul class="bullet-list">
+                    <li>Prepared accurate spare parts quotations based on customer requirements while ensuring rapid response times.</li>
+                    <li>Coordinated client requests and scheduled service engineers for on-site installations, repairs, and maintenance.</li>
+                    <li>Created and maintained Excel tracking sheets and MIS reports for daily workflow management.</li>
+                    <li>Managed service records and resolved customer queries to maintain high levels of client satisfaction.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="main-section">
+            <h2 class="main-title">Hobbies & Interests</h2>
+            <ul class="bullet-list" style="list-style: none; padding-left: 0;">
+                <li>• Active trekking and fitness enthusiast, focused on goals and continuous self-improvement.</li>
+                <li>• Passionate about exploring advanced automotive technology and logistics trends.</li>
+            </ul>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
